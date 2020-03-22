@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Tagging Service</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='/css/style.css') }}">
+
+</head>
+
+<body style="background: #F5D47C;">
+
+ <div class="login" >
+	    <h3>Sentiment Tagging Service</h3>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <textarea rows = "10" cols = "60" name = "description" placeholder="Enter text here..."></textarea><br>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Get sentiment</button>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
