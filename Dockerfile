@@ -9,6 +9,7 @@ RUN echo "http://dl-8.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
 RUN pip install flask nltk
 ENV PYTHONPATH "/usr/lib/python3.8/"
 ENV FLASK_APP "flask_app.py"
-EXPOSE 5000
+ENV FLASK_RUN_PORT=80
+EXPOSE 80
 
-CMD ["/bin/sh", "-c", "flask run --host=3.15.233.105"]
+CMD ["/bin/sh", "-c", "flask run --host=0.0.0.0"]
